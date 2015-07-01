@@ -6,11 +6,11 @@ public class WeatherData extends Observable {
     private float humidity;
     private float pressure;
 
-    public WeatherData() {}
+    public WeatherData(){};
 
     public void measurementsChanged() {
-        setChanged();
-        notifyObservers();
+        setChanged();      //setChanged() in the Observable, mark hasChanged being True
+        notifyObservers();   //Then notice to other observers
     }
 
     public void setMeasurements(float temperature, float humidity, float pressure) {

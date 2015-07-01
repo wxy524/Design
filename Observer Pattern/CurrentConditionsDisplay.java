@@ -13,14 +13,15 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
 
 	public void update(Observable obs, Object arg) {
 		if(obs instanceof WeatherData) {
-			WeatherData weatherData = (WeatherData)obs;
-			this.temperature = weatherData.getTemperature;
-			this.humidity = weatherData.getHumidity();
+			WeatherData weatherdata = (WeatherData)obs;
+			this.temperature = weatherdata.getTemperature();
+			this.humidity = weatherdata.getHumidity();
 			display();
 		}
 	}
 
 	public void display() {
-		System.out.println("Current conditions: " + temperature + "F degrees and " + humidity + "% humidity");
+		System.out.println("Current conditions: " + temperature + "F degrees and " + 
+							humidity + "% humidity");
 	}
 }
